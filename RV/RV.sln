@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.Website", "Empire.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.DataAccessLayer", "Empire.DataAccessLayer\Empire.DataAccessLayer.csproj", "{C4E9A7C5-9369-4FEE-922F-65B7BFFC609A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.BusinessLayer", "Empire.BusinessLayer\Empire.BusinessLayer.csproj", "{943165F1-1D93-438F-A9A3-844A843373CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C4E9A7C5-9369-4FEE-922F-65B7BFFC609A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4E9A7C5-9369-4FEE-922F-65B7BFFC609A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4E9A7C5-9369-4FEE-922F-65B7BFFC609A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{943165F1-1D93-438F-A9A3-844A843373CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{943165F1-1D93-438F-A9A3-844A843373CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{943165F1-1D93-438F-A9A3-844A843373CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{943165F1-1D93-438F-A9A3-844A843373CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

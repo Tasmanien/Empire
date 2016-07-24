@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using Empire.DataAccessLayer;
+using Empire.BusinessLayer;
 
 namespace Empire.Website.Controllers
 {
