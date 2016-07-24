@@ -1,0 +1,32 @@
+EF Code First tuto
+http://www.entityframeworktutorial.net/code-first/entity-framework-code-first.aspx
+
+EF Model First tuto
+http://www.entityframeworktutorial.net/model-first-with-entity-framework.aspx
+
+EF DataBase First tuto
+http://www.entityframeworktutorial.net/EntityFramework5/create-dbcontext-in-entity-framework5.aspx
+
+
+Not To Forget
+* Add New Item -> ADO.NET Entity Data Model -> Empty Code First model
+* Add Reference from web application to library to embedded the controllers stored in there
+
+* IF Problem with System.Web.Http
+http://stackoverflow.com/questions/19491860/could-not-load-file-or-assembly-system-web-http-4-0-0-after-update-from-2012-to
+
+* WEB API
+http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
+
+* For the cross domain issue
+http://www.asp.net/web-api/overview/security/enabling-cross-origin-requests-in-web-api
+
+/*
+in public static void Register(HttpConfiguration config) of WebApiConfig
+            var cors = new EnableCorsAttribute("http://front.empire", "*", "*");
+            config.EnableCors(cors);
+*/
+
+* to enable migration on project
+Select project in the Package Manager Console
+	Enable-Migrations
