@@ -1,5 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web;
+using System.Web.Mvc;
 using Empire.BusinessLayer;
+using Empire.BusinessLayer.Exceptions;
+using Empire.DataAccessLayer.Exceptions;
 
 namespace Empire.Website.Controllers
 {
@@ -7,12 +11,41 @@ namespace Empire.Website.Controllers
 	{
 		public ActionResult Index()
 		{
-			return View(ProductManager.GetAll());
+			try
+			{
+				return View(ProductManager.GetAll());
+			}
+			catch (DataAccessLayerException ex)
+			{
+				throw new HttpException(500, $"Internal Server Error (ERROR CODE: {ex.ErrorCode}");
+			}
+			catch (BusinessLayerException ex)
+			{
+				throw new HttpException(500, $"Internal Server Error (ERROR CODE: {ex.ErrorCode}");
+			}
+			catch (Exception ex)
+			{
+				throw new HttpException(500, $"Internal Server Error (ERROR MESSAGE: {ex.Message}");
+			}
 		}
-
 		public JsonResult Details(int productId)
 		{
-			return Json(ProductManager.GetProductDetails(productId), JsonRequestBehavior.AllowGet);
+			try
+			{
+				return Json(ProductManager.GetProductDetails(productId), JsonRequestBehavior.AllowGet);
+			}
+			catch (DataAccessLayerException ex)
+			{
+				throw new HttpException(500, $"Internal Server Error (ERROR CODE: {ex.ErrorCode}");
+			}
+			catch (BusinessLayerException ex)
+			{
+				throw new HttpException(500, $"Internal Server Error (ERROR CODE: {ex.ErrorCode}");
+			}
+			catch (Exception ex)
+			{
+				throw new HttpException(500, $"Internal Server Error (ERROR MESSAGE: {ex.Message}");
+			}
 		}
 	}
 }

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Empire.DataAccessLayer.Exceptions;
 using Empire.DataAccessLayer.Interfaces;
 using Empire.Database.Contexts;
 using Empire.Database.Entities;
@@ -9,58 +11,88 @@ namespace Empire.DataAccessLayer.DataAccessObjects
 {
 	public class ProductDao : IProductDao
 	{
+		private static IProductDao _instance;
+		public static IProductDao Instance => _instance ?? (_instance = new ProductDao());
+
 		public void Create(ProductDto product)
 		{
-			using (EmpireContext context = new EmpireContext())
+			try
 			{
-				context.Products.Add(GetEntity(product));
+				using (EmpireContext context = new EmpireContext())
+				{
+					context.Products.Add(GetEntity(product));
 
-				context.SaveChanges();
+					context.SaveChanges();
+				}
+			}
+			catch (Exception ex)
+			{
+				throw new DataAccessLayerException("Error while creating a product.", ex);
 			}
 		}
 		public void Update(ProductDto product)
 		{
-			using (EmpireContext context = new EmpireContext())
+			try
 			{
-				Product item = context.Products.Single(x => x.Id == product.Id);
+				using (EmpireContext context = new EmpireContext())
+				{
+					Product item = context.Products.Single(x => x.Id == product.Id);
 
-				item.Name = product.Name;
-				
-				context.SaveChanges();
+					item.Name = product.Name;
+
+					context.SaveChanges();
+				}
+			}
+			catch (Exception ex)
+			{
+				throw new DataAccessLayerException($"Error while updating a product ({product.Id}).", ex);
 			}
 		}
 		public void Delete(ProductDto product)
 		{
-			using (EmpireContext context = new EmpireContext())
+			try
 			{
-				Product item = context.Products.Single(x => x.Id == product.Id);
+				using (EmpireContext context = new EmpireContext())
+				{
+					Product item = context.Products.Single(x => x.Id == product.Id);
 
-				context.Products.Remove(item);
+					context.Products.Remove(item);
 
-				context.SaveChanges();
+					context.SaveChanges();
+				}
+			}
+			catch (Exception ex)
+			{
+				throw new DataAccessLayerException($"Error while deleting a product ({product.Id}).", ex);
 			}
 		}
 
 		public ProductDto GetById(int id)
 		{
-			using (EmpireContext context = new EmpireContext())
+			try
 			{
-				return GetDto(context.Products.Single(x => x.Id == id));
+				using (EmpireContext context = new EmpireContext())
+				{
+					return GetDto(context.Products.Single(x => x.Id == id));
+				}
+			}
+			catch (Exception ex)
+			{
+				throw new DataAccessLayerException($"Error while getting a product ({id}).", ex);
 			}
 		}
 		public List<ProductDto> GetAll()
 		{
-			using (EmpireContext database = new EmpireContext())
+			try
 			{
-				return database.Products.Select(GetDto).ToList();
+				using (EmpireContext database = new EmpireContext())
+				{
+					return database.Products.Select(GetDto).ToList();
+				}
 			}
-		}
-
-		public ProductDetailDto GetProductDetails(int productId)
-		{
-			using (EmpireContext context = new EmpireContext())
+			catch (Exception ex)
 			{
-				return GetDto(context.ProductDetails.Single(x => x.ProductId == productId));
+				throw new DataAccessLayerException("Error while getting all products.", ex);
 			}
 		}
 
@@ -72,31 +104,12 @@ namespace Empire.DataAccessLayer.DataAccessObjects
 				Name = product.Name
 			};
 		}
-		private static ProductDetailDto GetDto(ProductDetail productDetail)
-		{
-			return new ProductDetailDto
-			{
-				Id = productDetail.Id,
-				Description = productDetail.Description,
-				Price = productDetail.Price
-			};
-		}
-
 		private static Product GetEntity(ProductDto product)
 		{
 			return new Product
 			{
 				Id = product.Id,
 				Name = product.Name
-			};
-		}
-		private static ProductDetail GetEntity(ProductDetailDto productDetail)
-		{
-			return new ProductDetail
-			{
-				Id = productDetail.Id,
-				Description = productDetail.Description,
-				Price = productDetail.Price
 			};
 		}
 	}

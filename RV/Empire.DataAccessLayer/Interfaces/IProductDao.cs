@@ -4,6 +4,6 @@ namespace Empire.DataAccessLayer.Interfaces
 {
 	public interface IProductDao : IDataAccessObject<ProductDto>
 	{
-		ProductDetailDto GetProductDetails(int productId);
+
 	}
 }
