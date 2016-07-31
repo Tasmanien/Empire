@@ -178,6 +178,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Empire.BusinessLayer\Empire.BusinessLayer.csproj">
+      <Project>{AA931434-319A-4925-AA2B-B7AAC344DF45}</Project>
+      <Name>Empire.BusinessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Empire.DataAccessLayer\Empire.DataAccessLayer.csproj">
       <Project>{4BDB32AD-CF6C-4F69-B376-2441BC55627F}</Project>
       <Name>Empire.DataAccessLayer</Name>

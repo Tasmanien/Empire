@@ -1,4 +1,4 @@
-﻿namespace Empire.ServiceLayer
+﻿namespace Empire.ServiceLayer.DataTransferObjects
 {
 	public class ProductDto : DataTransferObject
 	{

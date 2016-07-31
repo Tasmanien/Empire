@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace Empire.ServiceLayer
+namespace Empire.ServiceLayer.DataTransferObjects
 {
 	public class ProductDetailDto : DataTransferObject
 	{
