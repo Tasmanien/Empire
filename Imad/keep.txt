@@ -7,6 +7,8 @@ http://www.entityframeworktutorial.net/model-first-with-entity-framework.aspx
 EF DataBase First tuto
 http://www.entityframeworktutorial.net/EntityFramework5/create-dbcontext-in-entity-framework5.aspx
 
+AutoMapper
+https://github.com/AutoMapper/AutoMapper/wiki/Getting-started
 
 Not To Forget
 * Add New Item -> ADO.NET Entity Data Model -> Empty Code First model
