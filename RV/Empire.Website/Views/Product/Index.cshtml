@@ -1,8 +1,8 @@
 ﻿@using System.Globalization
-@using Empire.DataAccessLayer
+@using Empire.ServiceLayer
 @using Empire.Website.Helpers
 
-@model IEnumerable<Product>
+@model IEnumerable<ProductDto>
 
 @{
 	ViewBag.Title = TranslationHelper.Translate(CultureInfo.CurrentCulture.Name, "Product.Title");
@@ -10,14 +10,20 @@
 
 <h2>@ViewBag.Title</h2>
 
-@foreach (Product product in Model)
+@foreach (ProductDto product in Model)
 {
 	<div style="padding-top: 20px;">
 		<span>@Html.DisplayFor(modelItem => product.Name)</span>
 
 		<a onclick="showDetails(@product.Id)">Details</a>
 
-		<div id="details_@product.Id" style="display: none; border: 1px solid black; padding: 10px">
+		<div id="loading_@product.Id" class="spinner" style="display: none; padding: 10px">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+
+		<div id="details_@product.Id" style="display: none; padding: 10px">
 			<div id="description_@product.Id"></div>
 			<div id="price_@product.Id"></div>
 		</div>
@@ -31,7 +37,10 @@
 			$("#description_" + productId).html("");
 			$("#price_" + productId).html("");
 			$("#details_" + productId).css("display", "none");
-		} else {
+			$("#loading_" + productId).css("display", "none");
+		}
+		else {
+			$("#loading_" + productId).css("display", "block");
 			$.ajax({
 				url: "/Product/Details",
 				data: { productId: productId },
@@ -41,6 +50,13 @@
 					$("#description_" + productId).html(data.Description);
 					$("#price_" + productId).html(data.PriceFormatted);
 					$("#details_" + productId).css("display", "block");
+					$("#loading_" + productId).css("display", "none");
+				},
+				error: function (data) {
+					$("#description_" + productId).html("There was an error while getting the description");
+					$("#price_" + productId).html("");
+					$("#details_" + productId).css("display", "block");
+					$("#loading_" + productId).css("display", "none");
 				}
 			});
 		}

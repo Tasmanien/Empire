@@ -1,12 +1,11 @@
 ﻿using System.Globalization;
 
-namespace Empire.DataAccessLayer
+namespace Empire.ServiceLayer
 {
-	public class ProductDetail : EntityBase
+	public class ProductDetailDto : DataTransferObject
 	{
 		public string Description { get; set; }
 		public decimal Price { get; set; }
-		public Product Product { get; set; }
 
 		public string PriceFormatted => Price.ToString("C", CultureInfo.CurrentCulture);
 	}

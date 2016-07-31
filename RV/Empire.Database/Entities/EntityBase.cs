@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Empire.DataAccessLayer
+namespace Empire.Database.Entities
 {
 	public class EntityBase
 	{

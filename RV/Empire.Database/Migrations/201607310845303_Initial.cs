@@ -1,8 +1,9 @@
-using System.Data.Entity.Migrations;
-
-namespace Empire.DataAccessLayer.Migrations
+namespace Empire.Database.Migrations
 {
-	public partial class InitialCreate : DbMigration
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -13,13 +14,13 @@ namespace Empire.DataAccessLayer.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Description = c.String(),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        ProductId = c.Int(nullable: false),
                         CreatedDate = c.DateTime(nullable: false),
                         UpdatedDate = c.DateTime(nullable: false),
-                        Product_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Products", t => t.Product_Id)
-                .Index(t => t.Product_Id);
+                .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
+                .Index(t => t.ProductId);
             
             CreateTable(
                 "dbo.Products",
@@ -36,8 +37,8 @@ namespace Empire.DataAccessLayer.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.ProductDetails", "Product_Id", "dbo.Products");
-            DropIndex("dbo.ProductDetails", new[] { "Product_Id" });
+            DropForeignKey("dbo.ProductDetails", "ProductId", "dbo.Products");
+            DropIndex("dbo.ProductDetails", new[] { "ProductId" });
             DropTable("dbo.Products");
             DropTable("dbo.ProductDetails");
         }

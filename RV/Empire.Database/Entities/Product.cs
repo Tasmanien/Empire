@@ -1,4 +1,4 @@
-﻿namespace Empire.DataAccessLayer
+﻿namespace Empire.Database.Entities
 {
 	public class Product : EntityBase
 	{

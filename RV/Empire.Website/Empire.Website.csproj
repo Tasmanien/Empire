@@ -136,10 +136,11 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\spinners.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -177,13 +178,13 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Empire.BusinessLayer\Empire.BusinessLayer.csproj">
-      <Project>{943165F1-1D93-438F-A9A3-844A843373CD}</Project>
-      <Name>Empire.BusinessLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Empire.DataAccessLayer\Empire.DataAccessLayer.csproj">
-      <Project>{C4E9A7C5-9369-4FEE-922F-65B7BFFC609A}</Project>
+      <Project>{4BDB32AD-CF6C-4F69-B376-2441BC55627F}</Project>
       <Name>Empire.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Empire.ServiceLayer\Empire.ServiceLayer.csproj">
+      <Project>{F0FE4B91-9106-4B06-911F-68A657895830}</Project>
+      <Name>Empire.ServiceLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

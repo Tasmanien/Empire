@@ -4,8 +4,9 @@ using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using Empire.Database.Entities;
 
-namespace Empire.DataAccessLayer
+namespace Empire.Database.Contexts
 {
 	public class EmpireContext : DbContext
 	{

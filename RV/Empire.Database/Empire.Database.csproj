@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{943165F1-1D93-438F-A9A3-844A843373CD}</ProjectGuid>
+    <ProjectGuid>{C4E9A7C5-9369-4FEE-922F-65B7BFFC609A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Empire.BusinessLayer</RootNamespace>
-    <AssemblyName>Empire.BusinessLayer</AssemblyName>
+    <RootNamespace>Empire.Database</RootNamespace>
+    <AssemblyName>Empire.Database</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,21 +40,33 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProductManager.cs" />
+    <Compile Include="Entities\EntityBase.cs" />
+    <Compile Include="Entities\ProductDetail.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Contexts\EmpireContext.cs" />
+    <Compile Include="Migrations\201607310845303_Initial.cs" />
+    <Compile Include="Migrations\201607310845303_Initial.Designer.cs">
+      <DependentUpon>201607310845303_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Empire.DataAccessLayer\Empire.DataAccessLayer.csproj">
-      <Project>{C4E9A7C5-9369-4FEE-922F-65B7BFFC609A}</Project>
-      <Name>Empire.DataAccessLayer</Name>
-    </ProjectReference>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607310845303_Initial.resx">
+      <DependentUpon>201607310845303_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
