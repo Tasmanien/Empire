@@ -10,6 +10,9 @@ http://www.entityframeworktutorial.net/EntityFramework5/create-dbcontext-in-enti
 AutoMapper
 https://github.com/AutoMapper/AutoMapper/wiki/Getting-started
 
+Entity Framework Improve Performance (Good Practice) !!!!
+https://www.simple-talk.com/dotnet/net-tools/entity-framework-performance-and-what-you-can-do-about-it/
+
 Not To Forget
 * Add New Item -> ADO.NET Entity Data Model -> Empty Code First model
 * Add Reference from web application to library to embedded the controllers stored in there
