@@ -35,3 +35,7 @@ in public static void Register(HttpConfiguration config) of WebApiConfig
 * to enable migration on project
 Select project in the Package Manager Console
 	Enable-Migrations
+
+* Soucis de sécurité
+Dans IIS selectionné le site => clic droit => edit permission => onglet sécurité => edit, Add.. => IIS_USRS => add rights
+Si encore => selectionné le site => Authentication => Edit Anonymous Authentication => application pool identity
