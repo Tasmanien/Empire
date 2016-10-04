@@ -1,0 +1,12 @@
+Once the web app is created right click on it
+	Edit permission...
+		Security tab
+			Edit
+				Add
+					IIS_IUSRS
+				Give rights to read
+
+Select the web app
+click on Authentication
+	Right click Anonymous Authentication => Edit
+		Application pool identity
