@@ -16,17 +16,24 @@ namespace Empire.BackEnd.Controllers
         public IEnumerable<ProductGridDto> Get()
         {
             ProductQueryHandler queryHandler = new ProductQueryHandler();
-            
+
             // ToDo: transform ProductData into ProductGridDto
             // AutoMapper ??
 
-            return new List<ProductGridDto> { new ProductGridDto { Id = 1, Name = "Name 01" } };
+            var list = new List<ProductGridDto>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                list.Add(new ProductGridDto { Id = i, Name = "Name 0" + i });
+            }
+
+            return list;
         }
 
         // GET: api/Product/5
         public ProductDetailDto Get(int id)
         {
-            return new ProductDetailDto { Id = 1, Name = "Name 01", Description = "Description 01" };
+            return new ProductDetailDto { Id = id, Name = "Name 0" + id, Description = "Description 0" + id };
         }
 
         // POST: api/Product
