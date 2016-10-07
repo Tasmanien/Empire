@@ -2,7 +2,7 @@
 
 namespace Empire.Database.Entities
 {
-	public class ProductDetail : EntityBase
+	public class ProductDetail : BaseEntity
 	{
 		public string Description { get; set; }
 		public decimal Price { get; set; }

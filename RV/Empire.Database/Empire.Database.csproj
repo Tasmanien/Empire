@@ -44,7 +44,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\EntityBase.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\ProductDetail.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Contexts\EmpireContext.cs" />

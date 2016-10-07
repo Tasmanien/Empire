@@ -30,13 +30,13 @@ namespace Empire.Database.Contexts
 
 			IEnumerable<ObjectStateEntry> objectStateEntries = context.ObjectStateManager
 				.GetObjectStateEntries(EntityState.Added | EntityState.Modified)
-				.Where(e => e.IsRelationship == false && e.Entity is EntityBase);
+				.Where(e => e.IsRelationship == false && e.Entity is BaseEntity);
 
 			DateTime currentTime = DateTime.Now;
 
 			foreach (ObjectStateEntry entry in objectStateEntries)
 			{
-				EntityBase entityBase = entry.Entity as EntityBase;
+				BaseEntity entityBase = entry.Entity as BaseEntity;
 				if (entityBase != null)
 				{
 					if (entry.State == EntityState.Added)

@@ -1,6 +1,6 @@
 ﻿namespace Empire.Database.Entities
 {
-	public class Product : EntityBase
+	public class Product : BaseEntity
 	{
 		public string Name { get; set; }
 	}

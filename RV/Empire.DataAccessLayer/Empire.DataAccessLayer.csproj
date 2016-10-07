@@ -42,27 +42,25 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessObjects\BaseDao.cs" />
     <Compile Include="DataAccessObjects\ProductDetailDao.cs" />
     <Compile Include="Exceptions\DataAccessLayerException.cs" />
-    <Compile Include="Interfaces\IDataAccessObject.cs" />
-    <Compile Include="Interfaces\IProductDetailDao.cs" />
-    <Compile Include="Interfaces\IProductDao.cs" />
     <Compile Include="DataAccessObjects\ProductDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\ProductDetailRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Empire.Database\Empire.Database.csproj">
       <Project>{C4E9A7C5-9369-4FEE-922F-65B7BFFC609A}</Project>
       <Name>Empire.Database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Empire.ServiceLayer\Empire.ServiceLayer.csproj">
-      <Project>{F0FE4B91-9106-4B06-911F-68A657895830}</Project>
-      <Name>Empire.ServiceLayer</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

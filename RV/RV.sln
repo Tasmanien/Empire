@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.Database", "Empire.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.DataAccessLayer", "Empire.DataAccessLayer\Empire.DataAccessLayer.csproj", "{4BDB32AD-CF6C-4F69-B376-2441BC55627F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.ServiceLayer", "Empire.ServiceLayer\Empire.ServiceLayer.csproj", "{F0FE4B91-9106-4B06-911F-68A657895830}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.BusinessLayer", "Empire.BusinessLayer\Empire.BusinessLayer.csproj", "{AA931434-319A-4925-AA2B-B7AAC344DF45}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{4BDB32AD-CF6C-4F69-B376-2441BC55627F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BDB32AD-CF6C-4F69-B376-2441BC55627F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BDB32AD-CF6C-4F69-B376-2441BC55627F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F0FE4B91-9106-4B06-911F-68A657895830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0FE4B91-9106-4B06-911F-68A657895830}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0FE4B91-9106-4B06-911F-68A657895830}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F0FE4B91-9106-4B06-911F-68A657895830}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AA931434-319A-4925-AA2B-B7AAC344DF45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AA931434-319A-4925-AA2B-B7AAC344DF45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA931434-319A-4925-AA2B-B7AAC344DF45}.Release|Any CPU.ActiveCfg = Release|Any CPU

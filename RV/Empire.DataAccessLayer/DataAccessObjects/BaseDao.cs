@@ -1,13 +1,10 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
-namespace Empire.Database.Entities
+namespace Empire.DataAccessLayer.DataAccessObjects
 {
-	public class EntityBase
+	public abstract class BaseDao
 	{
-		[Key]
 		public int Id { get; set; }
-
 		public DateTime CreatedDate { get; set; }
 		public DateTime UpdatedDate { get; set; }
 	}

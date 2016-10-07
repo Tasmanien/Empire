@@ -34,18 +34,17 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTransferObjects\BaseDto.cs" />
+    <Compile Include="DataTransferObjects\ProductDetailDto.cs" />
+    <Compile Include="DataTransferObjects\ProductDto.cs" />
     <Compile Include="Exceptions\BusinessLayerException.cs" />
-    <Compile Include="ProductManager.cs" />
+    <Compile Include="Services\ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Empire.DataAccessLayer\Empire.DataAccessLayer.csproj">
       <Project>{4BDB32AD-CF6C-4F69-B376-2441BC55627F}</Project>
       <Name>Empire.DataAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Empire.ServiceLayer\Empire.ServiceLayer.csproj">
-      <Project>{F0FE4B91-9106-4B06-911F-68A657895830}</Project>
-      <Name>Empire.ServiceLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

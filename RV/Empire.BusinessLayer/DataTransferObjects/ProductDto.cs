@@ -1,6 +1,6 @@
 ﻿namespace Empire.ServiceLayer.DataTransferObjects
 {
-	public class ProductDto : DataTransferObject
+	public class ProductDto : BaseDto
 	{
 		public string Name { get; set; }
 	}

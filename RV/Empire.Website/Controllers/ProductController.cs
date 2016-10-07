@@ -13,38 +13,38 @@ namespace Empire.Website.Controllers
 		{
 			try
 			{
-				return View(ProductManager.GetAll());
+				return View(ProductService.GetAll());
 			}
 			catch (DataAccessLayerException ex)
 			{
-				throw new HttpException(500, $"Internal Server Error (ERROR CODE: {ex.ErrorCode}");
+				throw new HttpException(500, $"Internal Server Error (ERROR CODE: {ex.ErrorCode})");
 			}
 			catch (BusinessLayerException ex)
 			{
-				throw new HttpException(500, $"Internal Server Error (ERROR CODE: {ex.ErrorCode}");
+				throw new HttpException(500, $"Internal Server Error (ERROR CODE: {ex.ErrorCode})");
 			}
 			catch (Exception ex)
 			{
-				throw new HttpException(500, $"Internal Server Error (ERROR MESSAGE: {ex.Message}");
+				throw new HttpException(500, $"Internal Server Error (ERROR MESSAGE: {ex.Message})");
 			}
 		}
 		public JsonResult Details(int productId)
 		{
 			try
 			{
-				return Json(ProductManager.GetProductDetails(productId), JsonRequestBehavior.AllowGet);
+				return Json(ProductService.GetProductDetails(productId), JsonRequestBehavior.AllowGet);
 			}
 			catch (DataAccessLayerException ex)
 			{
-				throw new HttpException(500, $"Internal Server Error (ERROR CODE: {ex.ErrorCode}");
+				throw new HttpException(500, $"Internal Server Error (ERROR CODE: {ex.ErrorCode})");
 			}
 			catch (BusinessLayerException ex)
 			{
-				throw new HttpException(500, $"Internal Server Error (ERROR CODE: {ex.ErrorCode}");
+				throw new HttpException(500, $"Internal Server Error (ERROR CODE: {ex.ErrorCode})");
 			}
 			catch (Exception ex)
 			{
-				throw new HttpException(500, $"Internal Server Error (ERROR MESSAGE: {ex.Message}");
+				throw new HttpException(500, $"Internal Server Error (ERROR MESSAGE: {ex.Message})");
 			}
 		}
 	}
