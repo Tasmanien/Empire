@@ -12,11 +12,10 @@ namespace Empire.BusinessLayer
 		private EmpireContext _context = new EmpireContext();
 
 		private ProductRepository _productRepository;
-
-		public ProductRepository ProductRepository => _productRepository ?? (_productRepository = new ProductRepository(_context));
+		private ProductRepository ProductRepository => _productRepository ?? (_productRepository = new ProductRepository(_context));
 
 		private ProductDetailRepository _productDetailRepository;
-		public ProductDetailRepository ProductDetailRepository => _productDetailRepository ?? (_productDetailRepository = new ProductDetailRepository(_context));
+		private ProductDetailRepository ProductDetailRepository => _productDetailRepository ?? (_productDetailRepository = new ProductDetailRepository(_context));
 
 		private static ProductService _instance;
 		public static ProductService Instance => _instance ?? (_instance = new ProductService());

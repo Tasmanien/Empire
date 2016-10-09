@@ -1,19 +1,18 @@
 ﻿<!DOCTYPE html>
 
-
 <html>
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>@ViewBag.Title - Empire</title>
+	<title>@ViewBag.Title</title>
 
 	@Styles.Render("~/Content/css")
 	@Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div style="margin-bottom: 20px">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -25,7 +24,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li>@Html.ActionLink("Home", "Index", "Home")</li>
+					<li>@Html.ActionLink("Account", "Index", "Account")</li>
 					<li>@Html.ActionLink("Product", "Index", "Product")</li>
 				</ul>
 			</div>
@@ -35,7 +34,7 @@
 		@RenderBody()
 		<hr />
 		<footer>
-			<p>&copy; @DateTime.Now.Year - Empire</p>
+			<p>&copy; @DateTime.Now.Year, Empire</p>
 		</footer>
 	</div>
 

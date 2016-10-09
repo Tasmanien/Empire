@@ -1,0 +1,29 @@
+﻿@using Empire.Website.Helpers
+
+@{
+	ViewBag.Title = $"{TranslationHelper.SiteName} - {TranslationHelper.Translate("Login.Title")}";
+}
+
+<div style="width: 322px; margin:auto; padding: 20px; border: 1px solid #AAAAAA; border-radius: 4px">
+
+	<h2>@TranslationHelper.Translate("Login.Title")</h2>
+
+	<form>
+		<div class="form-group">
+			<label for="inputPassword">@TranslationHelper.Translate("Login.Email")</label>
+			<input id="inputPassword" type="text" class="form-control" />
+		</div>
+		<div class="form-group">
+			<div style="display: inline-block">
+				<label for="inputPassword" class="font-size-small">@TranslationHelper.Translate("Login.Password")</label>
+			</div>
+			<div style="display: inline-block; text-align: right; float: right;">
+				<small>@Html.ActionLink(TranslationHelper.Translate("Login.ForgotPassword"), "ForgotPassword", "Account")</small>
+			</div>
+			<input id="inputPassword" type="password" class="form-control" />
+		</div>
+		<div>
+			<input type="submit" value="Sign in" class="btn btn-primary" />
+		</div>
+	</form>
+</div>

@@ -1,14 +1,11 @@
-﻿@using System.Globalization
-@using Empire.ServiceLayer.DataTransferObjects
+﻿@using Empire.ServiceLayer.DataTransferObjects
 @using Empire.Website.Helpers
 
-@model IEnumerable<ProductDto>
-
 @{
-	ViewBag.Title = TranslationHelper.Translate(CultureInfo.CurrentCulture.Name, "Product.Title");
+	ViewBag.Title = $"{TranslationHelper.SiteName} - {TranslationHelper.Translate("Product.Title")}";
 }
 
-<h2>@ViewBag.Title</h2>
+<h1>@TranslationHelper.Translate("Product.Title")</h1>
 
 @foreach (ProductDto product in Model)
 {

@@ -36,8 +36,10 @@
   <ItemGroup>
     <Compile Include="DataTransferObjects\BaseDto.cs" />
     <Compile Include="DataTransferObjects\ProductDetailDto.cs" />
+    <Compile Include="DataTransferObjects\UserDto.cs" />
     <Compile Include="DataTransferObjects\ProductDto.cs" />
     <Compile Include="Exceptions\BusinessLayerException.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

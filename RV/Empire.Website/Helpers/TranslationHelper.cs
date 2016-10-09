@@ -2,9 +2,11 @@ namespace Empire.Website.Helpers
 {
 	public static class TranslationHelper
 	{
-		public static string Translate(string language, string key)
+		public static string SiteName = "Empire";
+
+		public static string Translate(string key)
 		{
-			return "Product list";
+			return key;
 		}
 	}
 }
