@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.Website", "Empire.Website\Empire.Website.csproj", "{959073EF-C7DE-4828-ABA4-B7738024D5B7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.Database", "Empire.Database\Empire.Database.csproj", "{C4E9A7C5-9369-4FEE-922F-65B7BFFC609A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.DataAccessLayer", "Empire.DataAccessLayer\Empire.DataAccessLayer.csproj", "{4BDB32AD-CF6C-4F69-B376-2441BC55627F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.BusinessLayer", "Empire.BusinessLayer\Empire.BusinessLayer.csproj", "{AA931434-319A-4925-AA2B-B7AAC344DF45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.API", "Empire.API\Empire.API.csproj", "{9DE98709-26EA-486B-86CB-B542CCAEE661}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{959073EF-C7DE-4828-ABA4-B7738024D5B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{959073EF-C7DE-4828-ABA4-B7738024D5B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{959073EF-C7DE-4828-ABA4-B7738024D5B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{959073EF-C7DE-4828-ABA4-B7738024D5B7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C4E9A7C5-9369-4FEE-922F-65B7BFFC609A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C4E9A7C5-9369-4FEE-922F-65B7BFFC609A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4E9A7C5-9369-4FEE-922F-65B7BFFC609A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{AA931434-319A-4925-AA2B-B7AAC344DF45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA931434-319A-4925-AA2B-B7AAC344DF45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA931434-319A-4925-AA2B-B7AAC344DF45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DE98709-26EA-486B-86CB-B542CCAEE661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DE98709-26EA-486B-86CB-B542CCAEE661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DE98709-26EA-486B-86CB-B542CCAEE661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DE98709-26EA-486B-86CB-B542CCAEE661}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

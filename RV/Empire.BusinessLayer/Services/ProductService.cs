@@ -68,11 +68,9 @@ namespace Empire.BusinessLayer
 		{
 			return ProductRepository.Get().Select(Convert).ToList();
 		}
-
-		public object GetProductDetails(int productId)
+		public ProductDetailDto GetProductDetails(int productId)
 		{
 			return Convert(ProductDetailRepository.Get(x => x.ProductId == productId).FirstOrDefault());
 		}
-
 	}
 }
