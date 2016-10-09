@@ -46,6 +46,10 @@
       <Project>{4BDB32AD-CF6C-4F69-B376-2441BC55627F}</Project>
       <Name>Empire.DataAccessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Empire.Database\Empire.Database.csproj">
+      <Project>{C4E9A7C5-9369-4FEE-922F-65B7BFFC609A}</Project>
+      <Name>Empire.Database</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

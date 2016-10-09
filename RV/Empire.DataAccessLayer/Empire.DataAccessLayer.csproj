@@ -42,10 +42,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccessObjects\BaseDao.cs" />
-    <Compile Include="DataAccessObjects\ProductDetailDao.cs" />
     <Compile Include="Exceptions\DataAccessLayerException.cs" />
-    <Compile Include="DataAccessObjects\ProductDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\ProductDetailRepository.cs" />

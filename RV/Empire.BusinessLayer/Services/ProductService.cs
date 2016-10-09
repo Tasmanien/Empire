@@ -1,126 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Empire.BusinessLayer.Exceptions;
-using Empire.DataAccessLayer.DataAccessObjects;
-using Empire.DataAccessLayer.Exceptions;
 using Empire.DataAccessLayer.Repositories;
+using Empire.Database.Contexts;
+using Empire.Database.Entities;
 using Empire.ServiceLayer.DataTransferObjects;
 
 namespace Empire.BusinessLayer
 {
-	public static class ProductService
+	public class ProductService
 	{
-		public static void CreateOrUpdate(ProductDto item)
-		{
-			try
-			{
-				var repository = new ProductRepository();
-				repository.CreateOrUpdate(GetDao(item));
-			}
-			catch (DataAccessLayerException)
-			{
-				throw;
-			}
-			catch (Exception ex)
-			{
-				throw new BusinessLayerException("Error while creating or updating an item.", ex);
-			}
-		}
-		public static void Create(ProductDto item)
-		{
-			try
-			{
-				var repository = new ProductRepository();
-				repository.Create(GetDao(item));
-			}
-			catch (DataAccessLayerException)
-			{
-				throw;
-			}
-			catch (Exception ex)
-			{
-				throw new BusinessLayerException("Error while creating an item.", ex);
-			}
-		}
-		public static void Update(ProductDto item)
-		{
-			try
-			{
-				var repository = new ProductRepository();
-				repository.Update(GetDao(item));
-			}
-			catch (DataAccessLayerException)
-			{
-				throw;
-			}
-			catch (Exception ex)
-			{
-				throw new BusinessLayerException($"Error while updating an item ({item.Id}).", ex);
-			}
-		}
-		public static void Delete(ProductDto item)
-		{
-			try
-			{
-				var repository = new ProductRepository();
-				repository.Delete(GetDao(item));
-			}
-			catch (DataAccessLayerException)
-			{
-				throw;
-			}
-			catch (Exception ex)
-			{
-				throw new BusinessLayerException($"Error while deleting an item ({item.Id}).", ex);
-			}
-		}
+		private EmpireContext _context = new EmpireContext();
 
-		public static ProductDto GetById(int id)
-		{
-			try
-			{
-				var repository = new ProductRepository();
-				return GetDto(repository.GetById(id));
-			}
-			catch (Exception ex)
-			{
-				throw new DataAccessLayerException("Error while getting all items.", ex);
-			}
-		}
-		public static List<ProductDto> GetAll()
-		{
-			try
-			{
-				var repository = new ProductRepository();
-				return repository.GetAll().Select(GetDto).ToList();
-			}
-			catch (DataAccessLayerException)
-			{
-				throw;
-			}
-			catch (Exception ex)
-			{
-				throw new BusinessLayerException("Error while getting all items.", ex);
-			}
-		}
+		private ProductRepository _productRepository;
 
-		public static ProductDetailDto GetProductDetails(int productId)
-		{
-			try
-			{
-				var repository = new ProductDetailRepository();
-				return GetDto(repository.GetById(productId));
-			}
-			catch (Exception ex)
-			{
-				throw new DataAccessLayerException("Error while getting an item ({item.Id}).", ex);
-			}
-		}
+		public ProductRepository ProductRepository => _productRepository ?? (_productRepository = new ProductRepository(_context));
 
-		private static ProductDao GetDao(ProductDto item)
+		private ProductDetailRepository _productDetailRepository;
+		public ProductDetailRepository ProductDetailRepository => _productDetailRepository ?? (_productDetailRepository = new ProductDetailRepository(_context));
+
+		private static ProductService _instance;
+		public static ProductService Instance => _instance ?? (_instance = new ProductService());
+
+		private static Product Convert(ProductDto item)
 		{
-			return new ProductDao
+			return new Product
 			{
 				Id = item.Id,
 				CreatedDate = item.CreatedDate,
@@ -128,7 +31,7 @@ namespace Empire.BusinessLayer
 				Name = item.Name
 			};
 		}
-		private static ProductDto GetDto(ProductDao item)
+		private static ProductDto Convert(Product item)
 		{
 			return new ProductDto
 			{
@@ -139,9 +42,9 @@ namespace Empire.BusinessLayer
 			};
 		}
 
-		private static ProductDetailDao GetDao(ProductDetailDto item)
+		private static ProductDetail Convert(ProductDetailDto item)
 		{
-			return new ProductDetailDao
+			return new ProductDetail
 			{
 				Id = item.Id,
 				CreatedDate = item.CreatedDate,
@@ -150,7 +53,7 @@ namespace Empire.BusinessLayer
 				Price = item.Price
 			};
 		}
-		private static ProductDetailDto GetDto(ProductDetailDao item)
+		private static ProductDetailDto Convert(ProductDetail item)
 		{
 			return new ProductDetailDto
 			{
@@ -161,5 +64,16 @@ namespace Empire.BusinessLayer
 				Price = item.Price
 			};
 		}
+
+		public IList<ProductDto> GetProducts()
+		{
+			return ProductRepository.Get().Select(Convert).ToList();
+		}
+
+		public object GetProductDetails(int productId)
+		{
+			return Convert(ProductDetailRepository.Get(x => x.ProductId == productId).FirstOrDefault());
+		}
+
 	}
 }
