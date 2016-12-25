@@ -1,0 +1,22 @@
+﻿body {
+}
+
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: -100;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+div.horizontal {
+    display: flex;
+    justify-content: center;
+}
+
+div.vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

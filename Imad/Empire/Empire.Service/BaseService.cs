@@ -8,9 +8,8 @@ namespace Empire.Service
 {
     public abstract class BaseService<T>
     {
-        public T GetById(int id)
+        private void test()
         {
-
         }
     }
 }

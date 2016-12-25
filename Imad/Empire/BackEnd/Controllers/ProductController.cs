@@ -26,7 +26,7 @@ namespace BackEnd.Controllers
 
                 foreach (var prod in prods)
                 {
-                    products.Add(new Product() { Id = prod.Id, Name = prod.Name});
+                    products.Add(new Product() { ID = prod.ID, Name = prod.Name});
                 }
             }
 
@@ -49,7 +49,7 @@ namespace BackEnd.Controllers
 
             using (var ctx = new EmpireDBContext())
             {
-                product = ctx.Products.Single(x => x.Id == id);
+                product = ctx.Products.Single(x => x.ID == id);
             }
 
             return Json(product);

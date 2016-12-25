@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Empire.Models
+namespace Empire.Service.DataModel
 {
-    public class Product
+    public class ProductData : EntityData
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
     }

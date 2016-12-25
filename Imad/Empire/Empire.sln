@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.Model", "Empire\Empire.Model.csproj", "{EC2C86C3-D6C1-4989-B4C7-0E219271F1F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.Repositories", "Empire\Empire.Repositories.csproj", "{EC2C86C3-D6C1-4989-B4C7-0E219271F1F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApplication", "TestConsoleApplication\TestConsoleApplication.csproj", "{E2FCA2C4-7EC6-4895-99A2-DE76A463B087}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Back", "2.Back", "{65D82F1C-CC58-40E7-87BC-788CE6F6A37D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.Service", "Empire.Service\Empire.Service.csproj", "{C27A274B-3131-4F70-BB17-A81394D95271}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empire.Models", "Empire.Models\Empire.Models.csproj", "{97209AF9-2F1A-4838-92BA-4D7F995091B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{C27A274B-3131-4F70-BB17-A81394D95271}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C27A274B-3131-4F70-BB17-A81394D95271}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C27A274B-3131-4F70-BB17-A81394D95271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97209AF9-2F1A-4838-92BA-4D7F995091B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97209AF9-2F1A-4838-92BA-4D7F995091B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97209AF9-2F1A-4838-92BA-4D7F995091B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97209AF9-2F1A-4838-92BA-4D7F995091B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,5 +58,6 @@ Global
 		{AF3821E5-3AFB-4399-88FA-4B68BD44B28C} = {65D82F1C-CC58-40E7-87BC-788CE6F6A37D}
 		{6A8AE078-0275-4C9C-9FA3-82B04B728B22} = {C2CA1912-B8C8-47A6-BDF2-AC94880A245D}
 		{C27A274B-3131-4F70-BB17-A81394D95271} = {65D82F1C-CC58-40E7-87BC-788CE6F6A37D}
+		{97209AF9-2F1A-4838-92BA-4D7F995091B6} = {65D82F1C-CC58-40E7-87BC-788CE6F6A37D}
 	EndGlobalSection
 EndGlobal

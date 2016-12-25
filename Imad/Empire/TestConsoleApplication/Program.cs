@@ -1,5 +1,6 @@
 ﻿using Empire;
 using Empire.Models;
+using Empire.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,17 +13,10 @@ namespace TestConsoleApplication
     {
         static void Main(string[] args)
         {
-            using(var ctx = new EmpireDBContext())
-            {
-                ctx.Products.RemoveRange(ctx.Products);
+            Console.WriteLine("Started");
 
-                //for (int i = 0; i < 25; i++)
-                //{
-                //    ctx.Products.Add(new Product() { Id = i, Name = "Product " + i, Description = "Description numero " + i });
-                //}
-
-                ctx.SaveChanges();
-            }
+            Console.WriteLine("Press any key to continue ...");
+            Console.ReadKey();
         }
     }
 }
