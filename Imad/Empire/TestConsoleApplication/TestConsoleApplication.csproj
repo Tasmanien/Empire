@@ -58,9 +58,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Empire\Empire.csproj">
+    <ProjectReference Include="..\Empire\Empire.Model.csproj">
       <Project>{ec2c86c3-d6c1-4989-b4c7-0e219271f1f7}</Project>
-      <Name>Empire</Name>
+      <Name>Empire.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -16,10 +16,10 @@ namespace TestConsoleApplication
             {
                 ctx.Products.RemoveRange(ctx.Products);
 
-                for (int i = 0; i < 25; i++)
-                {
-                    ctx.Products.Add(new Product() { Id = i, Name = "Product " + i, Description = "Description numero " + i });
-                }
+                //for (int i = 0; i < 25; i++)
+                //{
+                //    ctx.Products.Add(new Product() { Id = i, Name = "Product " + i, Description = "Description numero " + i });
+                //}
 
                 ctx.SaveChanges();
             }
