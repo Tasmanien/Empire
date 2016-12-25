@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Empire
+namespace Empire.Repositories
 {
     /// <summary>
     /// This class serves as base repository for the other classes

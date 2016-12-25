@@ -1,4 +1,5 @@
 ﻿using Empire;
+using Empire.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

@@ -62,6 +62,10 @@
       <Project>{97209af9-2f1a-4838-92ba-4d7f995091b6}</Project>
       <Name>Empire.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Empire.Service\Empire.Service.csproj">
+      <Project>{c27a274b-3131-4f70-bb17-a81394d95271}</Project>
+      <Name>Empire.Service</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Empire\Empire.Repositories.csproj">
       <Project>{ec2c86c3-d6c1-4989-b4c7-0e219271f1f7}</Project>
       <Name>Empire.Repositories</Name>

@@ -4,7 +4,8 @@
     //If you wish to be able to create multiple instances, instead export a function.
     //See the "welcome" module for an example of function export.
 
-    var baseProductURI = "http://localhost:64231/api/product";
+    var baseProductURI = "http://localhost:64231/api/product",
+        inputText = ko.observable("");
 
     function test(id) {
         var valeur = "#loading_" + id + ", #descriptionButton_" + id;
@@ -44,6 +45,7 @@
         description: 'In this test we get products from the DB and we have the possibility to get extra details (In Progress)',
         images: ko.observableArray([]),
         products: ko.observableArray([]),
+        inputText: inputText,
         getProducts: function () {
             var uri = baseProductURI;
 
@@ -70,7 +72,7 @@
         getImages: function () {
             var that = this;
 
-            return http.jsonp('http://api.flickr.com/services/feeds/photos_public.gne', { tags: 'luxury', tagmode: 'any', format: 'json' }, 'jsoncallback').then(function (response) {
+            return http.jsonp('http://api.flickr.com/services/feeds/photos_public.gne', { tags: inputText(), tagmode: 'any', format: 'json' }, 'jsoncallback').then(function (response) {
                 that.images(response.items);
             });
         },

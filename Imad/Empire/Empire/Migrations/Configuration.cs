@@ -5,7 +5,7 @@ namespace Empire.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Empire.EmpireDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Empire.Repositories.EmpireDBContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace Empire.Migrations
             ContextKey = "Empire.EmpireDBContext";
         }
 
-        protected override void Seed(Empire.EmpireDBContext context)
+        protected override void Seed(Empire.Repositories.EmpireDBContext context)
         {
             //  This method will be called after migrating to the latest version.
 

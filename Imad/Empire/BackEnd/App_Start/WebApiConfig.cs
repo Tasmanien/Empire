@@ -11,6 +11,8 @@ namespace BackEnd
     {
         public static void Register(HttpConfiguration config)
         {
+            BackEnd.App_Start.MappingConfig.Config();
+
             var cors = new EnableCorsAttribute("http://front.empire", "*", "*");
             config.EnableCors(cors);
 

@@ -1,5 +1,8 @@
-﻿using Empire;
+﻿using AutoMapper;
+using Empire;
 using Empire.Models;
+using Empire.Models.DtoModels;
+using Empire.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,47 +15,17 @@ using System.Web.Http.Description;
 namespace BackEnd.Controllers
 {
     [RoutePrefix("api/product")]
-    public class ProductController : ApiController
+    public class ProductController : BaseController
     {
         [HttpGet, Route()]
-        [ResponseType(typeof(List<Product>))]
+        [ResponseType(typeof(List<ProductDto>))]
         public IHttpActionResult Get()
         {
-            var products = new List<Product>();
+            var service = new ProductService();
 
-            using (var ctx = new EmpireDBContext())
-            {
-                var prods = ctx.Products;
+            var products = service.GetAll();
 
-                foreach (var prod in prods)
-                {
-                    products.Add(new Product() { ID = prod.ID, Name = prod.Name});
-                }
-            }
-
-            return Json(products);
-        }
-
-
-        [HttpGet, Route("GetData")]
-        [ResponseType(typeof(string))]
-        public IHttpActionResult GetData()
-        {
-            return Json("Phénnix");
-        }
-
-        [HttpGet, Route("description/{id}")]
-        //[ResponseType(typeof(IEnumerable<Product>))]
-        public IHttpActionResult Get([FromUri]int id)
-        {
-            Product product = null;
-
-            using (var ctx = new EmpireDBContext())
-            {
-                product = ctx.Products.Single(x => x.ID == id);
-            }
-
-            return Json(product);
+            return Json(Mapper.Map<IEnumerable<ProductDto>>(products));
         }
     }
 }

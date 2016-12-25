@@ -1,4 +1,4 @@
-namespace Empire
+namespace Empire.Repositories
 {
     using Empire.Mappings;
     using Empire.Models;
@@ -62,7 +62,6 @@ namespace Empire
             base.OnModelCreating(modelBuilder);
         }
 
-
         /// <summary>
         /// Returns a System.Data.Entity.DbSet instance for access to entities
         /// of the given type in the context and the underlying store.
@@ -72,6 +71,28 @@ namespace Empire
         public virtual IDbSet<TEntity> EntitySet<TEntity>() where TEntity : class
         {
             return this.Set<TEntity>();
+        }
+
+        public void Rollback()
+        {
+            var changedEntries = this.ChangeTracker.Entries()
+                .Where(x => x.State != EntityState.Unchanged).ToList();
+
+            foreach (var entry in changedEntries.Where(x => x.State == EntityState.Modified))
+            {
+                entry.CurrentValues.SetValues(entry.OriginalValues);
+                entry.State = EntityState.Unchanged;
+            }
+
+            foreach (var entry in changedEntries.Where(x => x.State == EntityState.Added))
+            {
+                entry.State = EntityState.Detached;
+            }
+
+            foreach (var entry in changedEntries.Where(x => x.State == EntityState.Deleted))
+            {
+                entry.State = EntityState.Unchanged;
+            }
         }
     }
 }
