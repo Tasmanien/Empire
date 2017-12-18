@@ -1,0 +1,248 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B420A755-BAE1-4923-9599-3B433285D31B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WalletViewer.WebApp</RootNamespace>
+    <AssemblyName>WalletViewer.WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\WalletViewerApp - Web Deploy.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="app\controllers\walletController.js" />
+    <Content Include="app\routes.js" />
+    <Content Include="app\services\walletService.js" />
+    <Content Include="app\views\wallets.html" />
+    <Content Include="content\images\0x.png" />
+    <Content Include="content\images\act.png" />
+    <Content Include="content\images\ada.png" />
+    <Content Include="content\images\adx.png" />
+    <Content Include="content\images\ae.png" />
+    <Content Include="content\images\aion.png" />
+    <Content Include="content\images\amp.png" />
+    <Content Include="content\images\ant.png" />
+    <Content Include="content\images\ardr.png" />
+    <Content Include="content\images\ark.png" />
+    <Content Include="content\images\bat.png" />
+    <Content Include="content\images\bcc.png" />
+    <Content Include="content\images\bch.png" />
+    <Content Include="content\images\bcn.png" />
+    <Content Include="content\images\bdl.png" />
+    <Content Include="content\images\block.png" />
+    <Content Include="content\images\bnb.png" />
+    <Content Include="content\images\bnt.png" />
+    <Content Include="content\images\bq.png" />
+    <Content Include="content\images\bqx.png" />
+    <Content Include="content\images\btc.png" />
+    <Content Include="content\images\btcd.png" />
+    <Content Include="content\images\btg.png" />
+    <Content Include="content\images\btm.png" />
+    <Content Include="content\images\bts.png" />
+    <Content Include="content\images\btx.png" />
+    <Content Include="content\images\cvc.png" />
+    <Content Include="content\images\dash.png" />
+    <Content Include="content\images\data.png" />
+    <Content Include="content\images\dcn.png" />
+    <Content Include="content\images\dcr.png" />
+    <Content Include="content\images\dgb.png" />
+    <Content Include="content\images\dgd.png" />
+    <Content Include="content\images\doge.png" />
+    <Content Include="content\images\drgn.png" />
+    <Content Include="content\images\edg.png" />
+    <Content Include="content\images\edoge.png" />
+    <Content Include="content\images\emc.png" />
+    <Content Include="content\images\emc2.png" />
+    <Content Include="content\images\eos.png" />
+    <Content Include="content\images\etc.png" />
+    <Content Include="content\images\eth.png" />
+    <Content Include="content\images\ethos.png" />
+    <Content Include="content\images\etp.png" />
+    <Content Include="content\images\exmo.png" />
+    <Content Include="content\images\fair.png" />
+    <Content Include="content\images\fct.png" />
+    <Content Include="content\images\fil.png" />
+    <Content Include="content\images\fun.png" />
+    <Content Include="content\images\game.png" />
+    <Content Include="content\images\gbyte.png" />
+    <Content Include="content\images\gno.png" />
+    <Content Include="content\images\gnt.png" />
+    <Content Include="content\images\grs.png" />
+    <Content Include="content\images\gup.png" />
+    <Content Include="content\images\gxs.png" />
+    <Content Include="content\images\hsr.png" />
+    <Content Include="content\images\icn.png" />
+    <Content Include="content\images\kcs.png" />
+    <Content Include="content\images\kmd.png" />
+    <Content Include="content\images\knc.png" />
+    <Content Include="content\images\krb.png" />
+    <Content Include="content\images\lkk.png" />
+    <Content Include="content\images\lrc.png" />
+    <Content Include="content\images\lsk.png" />
+    <Content Include="content\images\ltc.png" />
+    <Content Include="content\images\maid.png" />
+    <Content Include="content\images\mana.png" />
+    <Content Include="content\images\mcap.png" />
+    <Content Include="content\images\mco.png" />
+    <Content Include="content\images\miota.png" />
+    <Content Include="content\images\mln.png" />
+    <Content Include="content\images\mnx.png" />
+    <Content Include="content\images\mona.png" />
+    <Content Include="content\images\mtl.png" />
+    <Content Include="content\images\music.png" />
+    <Content Include="content\images\nav.png" />
+    <Content Include="content\images\nebl.png" />
+    <Content Include="content\images\neo.png" />
+    <Content Include="content\images\nlg.png" />
+    <Content Include="content\images\nmc.png" />
+    <Content Include="content\images\nxt.png" />
+    <Content Include="content\images\omg.png" />
+    <Content Include="content\images\part.png" />
+    <Content Include="content\images\pay.png" />
+    <Content Include="content\images\pivx.png" />
+    <Content Include="content\images\pot.png" />
+    <Content Include="content\images\ppc.png" />
+    <Content Include="content\images\ppt.png" />
+    <Content Include="content\images\pura.png" />
+    <Content Include="content\images\qash.png" />
+    <Content Include="content\images\qiwi.png" />
+    <Content Include="content\images\qtum.png" />
+    <Content Include="content\images\rdn.png" />
+    <Content Include="content\images\rep.png" />
+    <Content Include="content\images\rhoc.png" />
+    <Content Include="content\images\rlc.png" />
+    <Content Include="content\images\salt.png" />
+    <Content Include="content\images\san.png" />
+    <Content Include="content\images\sberbank.png" />
+    <Content Include="content\images\sc.png" />
+    <Content Include="content\images\sky.png" />
+    <Content Include="content\images\smart.png" />
+    <Content Include="content\images\sngls.png" />
+    <Content Include="content\images\snt.png" />
+    <Content Include="content\images\steem.png" />
+    <Content Include="content\images\storj.png" />
+    <Content Include="content\images\strat.png" />
+    <Content Include="content\images\sub.png" />
+    <Content Include="content\images\taas.png" />
+    <Content Include="content\images\tkn.png" />
+    <Content Include="content\images\trx.png" />
+    <Content Include="content\images\ubq.png" />
+    <Content Include="content\images\usdt.png" />
+    <Content Include="content\images\ven.png" />
+    <Content Include="content\images\veri.png" />
+    <Content Include="content\images\vtc.png" />
+    <Content Include="content\images\waves.png" />
+    <Content Include="content\images\wtc.png" />
+    <Content Include="content\images\xcp.png" />
+    <Content Include="content\images\xem.png" />
+    <Content Include="content\images\xlm.png" />
+    <Content Include="content\images\xmr.png" />
+    <Content Include="content\images\xrb.png" />
+    <Content Include="content\images\xrp.png" />
+    <Content Include="content\images\xtz.png" />
+    <Content Include="content\images\xuc.png" />
+    <Content Include="content\images\xvg.png" />
+    <Content Include="content\images\xzc.png" />
+    <Content Include="content\images\zec.png" />
+    <Content Include="content\images\zen.png" />
+    <Content Include="index.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="scripts\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52092</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/app</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

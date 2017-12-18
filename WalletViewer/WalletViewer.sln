@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletViewer.Console", "WalletViewer.Console\WalletViewer.Console.csproj", "{078507FD-EE2F-4E01-9AC1-87AE55236D9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletViewer.Services", "WalletViewer.Services\WalletViewer.Services.csproj", "{2F42314E-7E89-490B-8669-B967C8100C4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletViewer.Core", "WalletViewer.Core\WalletViewer.Core.csproj", "{9B621822-C657-46C6-8E11-586944619B74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletViewer.Components", "WalletViewer.Components\WalletViewer.Components.csproj", "{52239F5E-492A-4071-9D84-924B77B9E66A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletViewer.API", "WalletViewer.API\WalletViewer.API.csproj", "{8FD4C4BC-BD81-4B9B-B9B0-0F09D6BD65DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletViewer.WebApp", "WalletViewer.WebApp\WalletViewer.WebApp.csproj", "{B420A755-BAE1-4923-9599-3B433285D31B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{078507FD-EE2F-4E01-9AC1-87AE55236D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{078507FD-EE2F-4E01-9AC1-87AE55236D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{078507FD-EE2F-4E01-9AC1-87AE55236D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{078507FD-EE2F-4E01-9AC1-87AE55236D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F42314E-7E89-490B-8669-B967C8100C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F42314E-7E89-490B-8669-B967C8100C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F42314E-7E89-490B-8669-B967C8100C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F42314E-7E89-490B-8669-B967C8100C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B621822-C657-46C6-8E11-586944619B74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B621822-C657-46C6-8E11-586944619B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B621822-C657-46C6-8E11-586944619B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B621822-C657-46C6-8E11-586944619B74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52239F5E-492A-4071-9D84-924B77B9E66A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52239F5E-492A-4071-9D84-924B77B9E66A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52239F5E-492A-4071-9D84-924B77B9E66A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52239F5E-492A-4071-9D84-924B77B9E66A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FD4C4BC-BD81-4B9B-B9B0-0F09D6BD65DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FD4C4BC-BD81-4B9B-B9B0-0F09D6BD65DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FD4C4BC-BD81-4B9B-B9B0-0F09D6BD65DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FD4C4BC-BD81-4B9B-B9B0-0F09D6BD65DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B420A755-BAE1-4923-9599-3B433285D31B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B420A755-BAE1-4923-9599-3B433285D31B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B420A755-BAE1-4923-9599-3B433285D31B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B420A755-BAE1-4923-9599-3B433285D31B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F69F3548-31AE-4310-AF8E-2ECFDB58A23E}
+	EndGlobalSection
+EndGlobal
