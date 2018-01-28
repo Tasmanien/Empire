@@ -9,7 +9,7 @@
                 'Ethereum': 'eth',
                 'EthereumClassic': 'etc',
                 'Litecoin': 'ltc',
-                'Ripple': 'xrp',
+                'Ripple': 'xrp'
             };
 
             $scope.wallets = [];
@@ -88,6 +88,6 @@
                 for (var i = 0; i < $scope.wallets.length; i++) {
                     $scope.totalValue += $scope.wallets[i].value;
                 }
-            }
+            };
         }
     ]);

@@ -3,6 +3,7 @@
     public enum Exchange
     {
         Poloniex,
-        Kraken
+        Kraken,
+        Coinbase
     }
 }

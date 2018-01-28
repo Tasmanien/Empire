@@ -21,28 +21,23 @@ namespace WalletViewer
 
             var baseCurrencies = new[] { Currency.UnitedStatesDollar, Currency.Euro };
 
-            var exchanges = new[] { Exchange.Kraken, /*Exchange.Poloniex */ };
-
             foreach (var baseCurrency in baseCurrencies)
             {
-                foreach (var exchange in exchanges)
+                var walletsValue = wallets.Sum(wallet =>
                 {
-                    var walletsValue = wallets.Sum(wallet =>
-                    {
-                        var value = WalletComponent.GetWalletValue(wallet, baseCurrency, exchange, out decimal balance);
+                    var value = WalletComponent.GetWalletValue(wallet, baseCurrency, out decimal balance);
 
-                        var symbol = wallet.Currency.GetSymbol();
+                    var symbol = wallet.Currency.GetSymbol();
 
-                        var price = value / balance;
+                    var price = value / balance;
 
-                        Console.WriteLine(FormattableString.Invariant($"{balance} {symbol} - {value.ToString(baseCurrency)} ({price.ToString(baseCurrency)}/u)"));
+                    Console.WriteLine(FormattableString.Invariant($"{balance} {symbol} - {value.ToString(baseCurrency)} ({price.ToString(baseCurrency)}/u)"));
 
-                        return value;
-                    });
+                    return value;
+                });
 
-                    Console.WriteLine(FormattableString.Invariant($"Total on {exchange}: {walletsValue.ToString(baseCurrency)}"));
-                    Console.WriteLine();
-                }
+                Console.WriteLine(FormattableString.Invariant($"Total: {walletsValue.ToString(baseCurrency)}"));
+                Console.WriteLine();
             }
 
             Console.ReadLine();

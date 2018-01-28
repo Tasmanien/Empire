@@ -9,7 +9,7 @@ namespace WalletViewer.API.Controllers
     {
         public IHttpActionResult GetBalance(Currency currency, string address)
         {
-            var value = WalletComponent.GetWalletValue(currency, address, Currency.UnitedStatesDollar, Exchange.Kraken, out decimal balance);
+            var value = WalletComponent.GetWalletValue(currency, address, Currency.Euro, out decimal balance);
 
             return Ok(new
             {

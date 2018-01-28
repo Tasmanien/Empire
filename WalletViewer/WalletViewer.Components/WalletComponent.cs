@@ -5,22 +5,22 @@ namespace WalletViewer.Components
 {
     public static class WalletComponent
     {
-        public static decimal GetWalletValue(Wallet wallet, Currency baseCurrency, Exchange exchange, out decimal balance)
+        public static decimal GetWalletValue(Wallet wallet, Currency baseCurrency, out decimal balance)
         {
             balance = wallet.GetBalance();
 
-            var price = wallet.Currency.GetPrice(baseCurrency, exchange);
+            var price = wallet.Currency.GetPrice(baseCurrency);
 
             var value = balance * price;
 
             return value;
         }
 
-        public static decimal GetWalletValue(Currency currency, string address, Currency baseCurrency, Exchange exchange, out decimal balance)
+        public static decimal GetWalletValue(Currency currency, string address, Currency baseCurrency, out decimal balance)
         {
             var wallet = new Wallet(currency, address);
 
-            return GetWalletValue(wallet, baseCurrency, exchange, out balance);
+            return GetWalletValue(wallet, baseCurrency, out balance);
         }
     }
 }

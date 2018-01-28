@@ -2,7 +2,7 @@
 <table class="table table-striped">
     <tr>
         <td colspan="2">
-            <span>Total value: ${{ totalValue | number:2 }}</span>
+            <span>Total value: {{ totalValue | number:2 }} €</span>
         </td>
         <td>
             <button ng-click="updateBalances()" class="btn btn-primary">Refresh all</button>
@@ -10,10 +10,12 @@
     </tr>
     <tr ng-repeat="wallet in wallets">
         <td>
-            <img src="content/images/{{ symbols[wallet.currency] }}.png" width="32" height="32"/>
+            <img src="content/images/{{ symbols[wallet.currency] }}.png" width="32" height="32" />
         </td>
         <td>
-            <span>{{ wallet.balance | number:2 }} (${{ wallet.value | number:2 }})</span>
+            <span>{{ wallet.balance | number:2 }} ({{ wallet.value | number:2 }} €)</span>
+            <br ng-if="wallet.balance > 0" />
+            <span ng-if="wallet.balance > 0">{{ (wallet.value / wallet.balance) | number:2 }} €/u</span>
         </td>
         <td>
             <button ng-click="wallet.refreshing ? null : updateBalance(wallet)" class="btn btn-primary" ng-disabled="wallet.refreshing">Refresh</button>

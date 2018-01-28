@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Globalization;
 using System.Net.Http;
-using System.Web;
 using Newtonsoft.Json;
 using WalletViewer.Core;
 
@@ -8,33 +8,30 @@ namespace WalletViewer.Services
 {
     public class EthereumClassicBalanceService : IBalanceService
     {
-        private static readonly Uri ApiUri = new Uri(@"https://etcchain.com/api/v1/getAddressBalance");
+        private static readonly Uri ApiUri = new Uri(@"https://api.gastracker.io/addr/{0}");
+
+        private const decimal WeiValue = 1E-18m;
 
         public decimal GetAddressBalance(string address)
         {
-            var parameters = HttpUtility.ParseQueryString(string.Empty);
+            var uri = new Uri(string.Format(CultureInfo.InvariantCulture, ApiUri.ToString(), address));
 
-            parameters.Add("address", address);
+            var uriBuilder = new UriBuilder(uri);
 
-            var uriBuilder = new UriBuilder(ApiUri)
-            {
-                Query = parameters.ToString()
-            };
-
-            using (var client = new HttpClient { Timeout = TimeSpan.FromMinutes(1) })
+            using (var client = new HttpClient { Timeout = TimeSpan.FromSeconds(15) })
             {
                 var response = client.GetStringAsync(uriBuilder.ToString()).Result;
 
                 var result = JsonConvert.DeserializeObject<dynamic>(response);
 
-                if (result.error != null)
+                if (result.success != null)
                 {
-                    throw new BalanceServiceException(result.error.Value, uriBuilder.Uri, address);
+                    throw new BalanceServiceException(result.success.Value, uriBuilder.Uri, address);
                 }
 
-                var amount = Convert.ToDecimal(result.balance.Value);
+                var amount = Convert.ToDecimal(result.balance.wei.Value);
 
-                return amount;
+                return amount * WeiValue;
             }
         }
     }

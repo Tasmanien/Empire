@@ -17,7 +17,7 @@ namespace WalletViewer.Services
 
             var uriBuilder = new UriBuilder(uri);
 
-            using (var client = new HttpClient { Timeout = TimeSpan.FromMinutes(1) })
+            using (var client = new HttpClient { Timeout = TimeSpan.FromSeconds(15) })
             {
                 var response = client.GetStringAsync(uriBuilder.ToString()).Result;
 

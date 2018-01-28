@@ -40,6 +40,7 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoinbasePriceService.cs" />
     <Compile Include="CurrencyExtensions.cs" />
     <Compile Include="EthereumBalanceService.cs" />
     <Compile Include="EthereumClassicBalanceService.cs" />

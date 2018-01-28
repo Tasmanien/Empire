@@ -14,8 +14,11 @@ namespace WalletViewer.Services
 
         private static readonly Dictionary<Tuple<Currency, Currency>, string> PairCode = new Dictionary<Tuple<Currency, Currency>, string>
         {
+            [Tuple.Create(Currency.Bitcoin, Currency.UnitedStatesDollar)] = "USDT_BTC",
+            [Tuple.Create(Currency.Dash, Currency.UnitedStatesDollar)] = "USDT_DASH",
             [Tuple.Create(Currency.Ethereum, Currency.UnitedStatesDollar)] = "USDT_ETH",
             [Tuple.Create(Currency.EthereumClassic, Currency.UnitedStatesDollar)] = "USDT_ETC",
+            [Tuple.Create(Currency.Litecoin, Currency.UnitedStatesDollar)] = "USDT_LTC",
             [Tuple.Create(Currency.Ripple, Currency.UnitedStatesDollar)] = "USDT_XRP"
         };
 
@@ -30,7 +33,7 @@ namespace WalletViewer.Services
                 Query = parameters.ToString()
             };
 
-            using (var client = new HttpClient { Timeout = TimeSpan.FromMinutes(1) })
+            using (var client = new HttpClient { Timeout = TimeSpan.FromSeconds(15) })
             {
                 var response = client.GetStringAsync(uriBuilder.ToString()).Result;
 
