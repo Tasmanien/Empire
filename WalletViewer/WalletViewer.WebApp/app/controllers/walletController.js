@@ -23,8 +23,24 @@
             });
 
             $scope.wallets.push({
+                'currency': 'Bitcoin',
+                'address': '3AE7FV9MANC59xCdGB1uQ7BwvPnmeqxjtS',
+                'balance': 0,
+                'value': 0,
+                'refreshing': false
+            });
+
+            $scope.wallets.push({
                 'currency': 'Dash',
                 'address': 'XjGbEyY1UTc9JwTXjBg8rku3uJeNpL74HB',
+                'balance': 0,
+                'value': 0,
+                'refreshing': false
+            });
+
+            $scope.wallets.push({
+                'currency': 'Dash',
+                'address': 'XmKVty1W25CRx6TxckCeHKa94p4gsTPBxo',
                 'balance': 0,
                 'value': 0,
                 'refreshing': false
@@ -49,6 +65,14 @@
             $scope.wallets.push({
                 'currency': 'Litecoin',
                 'address': 'LZ8ZXhwqt27LyMV3AUN51mzbaURWe3iZ5v',
+                'balance': 0,
+                'value': 0,
+                'refreshing': false
+            });
+
+            $scope.wallets.push({
+                'currency': 'Litecoin',
+                'address': 'LXTuszbQ8SyejQvadGrJKdE8ZXG6NBUxiY',
                 'balance': 0,
                 'value': 0,
                 'refreshing': false
